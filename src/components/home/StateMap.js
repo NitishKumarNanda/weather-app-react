@@ -12,7 +12,7 @@ export default function StateMap({ stateMap, stateName }) {
 
   const searchWeatherHandler = () => {
     if (search !== "") {
-      axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=62cd8f10ea471019bc84d9d2b97f07f6`)
+      axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${search},${stateName}&appid=62cd8f10ea471019bc84d9d2b97f07f6&units=metric`)
         .then((res) => {
           console.log(res.data)
           setWeather(res.data)
